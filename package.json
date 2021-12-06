@@ -1,0 +1,67 @@
+{
+  "name": "typed-react-router",
+  "description": "Typed route paths & typed route parameters on top of React Router V6, providing better editor support and increased safety",
+  "author": "Bram Hoendervangers <bram.Hoendervangers@gmail.com>",
+  "repository": "https://github.com/bram209/typed-react-router",
+  "license": "MIT",
+  "version": "0.1.0",
+  "keywords": [
+    "typescript",
+    "react-router",
+    "react",
+    "router",
+    "typed",
+    "routes",
+    "react router typescript",
+    "react router types",
+    "react router dom",
+    "react router dom types",
+    "react router dom typescript"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "lint": "yarn lint:format && yarn lint:fix"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@types/node": "^15.12.2",
+    "@types/react": "^17.0.37",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.2.1",
+    "react": "^17.0.2",
+    "react-router-dom": "^6.0.2",
+    "rollup-plugin-typescript-paths": "^1.3.0",
+    "rollup-plugin-visualizer": "^5.5.2",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.5.2",
+    "vite": "^2.1.0"
+  },
+  "pre-commit": "lint",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/main.cjs.js",
+  "module": "./dist/main.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/main.es.js",
+      "require": "./dist/main.cjs.js"
+    }
+  },
+  "typings": "./dist/main.d.ts"
+}
