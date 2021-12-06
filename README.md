@@ -17,17 +17,25 @@ The main aim of `typed-react-router` is to be:
 - Refactorable
 - React Router V6 compatible
 
-It discourages links to relative paths and allows the editor to provide auto-completion of full explicit paths. This has the adventages of:
+It discourages links to relative paths and allows the editor to provide auto-completion of full explicit paths. This has the advantages of:
 - You directly see where a link will be navigating to
 - You get auto-completions on all route patterns
-- Modifiying the (parent) routes will result in compile errors
+- Modifying the (parent) routes will result in compile errors
 - Correct route parameters are enforced by the type system
 
 > During route declaration, you may use absolute & relative route paths. When it talks about discouraging relative paths, it is about **pointing** to the route that should not be relative, not the declaration of it.
 
+## Install
+
+`npm install typed-react-router`
+
+`yarn add typed-react-router`
+
+
+
 ## Getting started
 
-`typed-react-router` works with any project that uses React Router V6 and is built upon it's [route objects api](https://reactrouter.com/docs/en/v6/examples/route-objects)
+`typed-react-router` works with any project that uses React Router V6 and is built upon its [route objects api](https://reactrouter.com/docs/en/v6/examples/route-objects)
 
 1. You need to define your routes as Route Objects
 2. Make a `const` assertion of your routes so that no literal types will be widened (e.g. no going from `"/courses"` to `string`). This will enable the typescript compiler to infer the route patterns
