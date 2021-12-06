@@ -16,11 +16,13 @@ The main aim of `typed-react-router` is to be:
 - Explicit
 - Refactorable
 
-It discourages relative paths and allows the editor to provide auto-completion of full explicit paths. This has the adventages of:
+It discourages links to relative paths and allows the editor to provide auto-completion of full explicit paths. This has the adventages of:
 - You directly see where a link will be navigating to
 - You get auto-completions on all route patterns
 - Modifiying the (parent) routes will result in compile errors
 - Correct route parameters are enforced by the type system
+
+> During route declaration, you may use absolute & relative route paths. When it talks about discouraging relative paths, it is about **pointing** to the route that should not be relative, not the declaration of it.
 
 ## Getting started
 
@@ -112,8 +114,12 @@ export function Layout() {
 
 ## FAQ
 
-### What if I want to use relative routes?
-Like explained in the `Principles` section above, `typed-react-router` is meant to be used with explicit full route paths.
+
+### What if I want to use relative paths in my route objects?
+This library supports both relative and absolute paths in the route definition
+
+### What if I want to make relative links?
+Like explained in the `Principles` section above, `typed-react-router` is meant to be used with links to explicit full route paths.
 
 This means that the following code (taken from the `Route objects` react-router example):
 ```typescript
@@ -128,7 +134,7 @@ This means that the following code (taken from the `Route objects` react-router 
           element: <Courses />,
           children: [
             { index: true, element: <CoursesIndex /> },
-            { path: "/courses/details/:id", element: <Course /> }
+            { path: "/courses/details/:courseId", element: <Course /> }
           ]
         },
         { path: "*", element: <NoMatch /> }
