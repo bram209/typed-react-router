@@ -125,10 +125,10 @@ export function Layout() {
 
 
 ### What if I want to use relative paths in my route objects?
-This library supports both relative and absolute paths in the route definition
+This library supports both relative and absolute paths in your routes declarations (the ones that you pass to `useRoutes`, same as in `react-router`.
 
 ### What if I want to make relative links?
-Like explained in the `Principles` section above, `typed-react-router` is meant to be used with links to explicit full route paths.
+Like explained in the `Principles` section above, `typed-react-router` is meant to be used by pointing to absolute route paths.
 
 This means that the following code (taken from the `Route objects` react-router example):
 ```typescript
