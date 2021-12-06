@@ -108,7 +108,10 @@ export function Layout() {
     </div>
   )
 }
-```
+
+...
+// omitted for brevity
+...
 
 ## FAQ
 
