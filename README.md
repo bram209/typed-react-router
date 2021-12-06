@@ -7,6 +7,8 @@ Typed route paths & typed route parameters on top of React Router V6, providing 
 - [x] **Better editor support**
 - [x] **Increased type safety**
 
+![Example of typed link](./react-router-link.gif)
+
 ## Principles
 `typed-react-router` uses a combination of typescipt's conditional types & template literal types to infer the route patterns of your app on compile time.
 The main aim of `typed-react-router` is to be:
