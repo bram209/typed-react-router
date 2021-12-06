@@ -27,7 +27,7 @@ It discourages relative paths and allows the editor to provide auto-completion o
 `typed-react-router` works with any project that uses React Router V6 and is built upon it's [route objects api](https://reactrouter.com/docs/en/v6/examples/route-objects)
 
 1. You need to define your routes as Route Objects
-2. Make a `const` assertion of your routes so that no literal types will be widened (e.g. no going from "/courses" to string) and enabling the typescript compiler to infer the route patterns
+2. Make a `const` assertion of your routes so that no literal types will be widened (e.g. no going from `"/courses"` to `string`). This will enable the typescript compiler to infer the route patterns
 
 ```typescript
 export const routes = [
