@@ -23,7 +23,7 @@ It discourages links to relative paths and allows the editor to provide auto-com
 - Modifying the (parent) routes will result in compile errors
 - Correct route parameters are enforced by the type system
 
-> During route declaration, you may use both absolute & relative route paths. When **pointing** towards a route, absolute paths need to be used.
+> During route declaration, you may use both absolute & relative route paths. When you want to navigate to a route, absolute paths need to be used.
 
 ## Install
 
