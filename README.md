@@ -128,7 +128,7 @@ This means that the following code (taken from the `Route objects` react-router 
           element: <Courses />,
           children: [
             { index: true, element: <CoursesIndex /> },
-            { path: "/courses/:id", element: <Course /> }
+            { path: "/courses/details/:id", element: <Course /> }
           ]
         },
         { path: "*", element: <NoMatch /> }
