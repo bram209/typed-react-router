@@ -17,13 +17,13 @@ The main aim of `typed-react-router` is to be:
 - Refactorable
 - React Router V6 compatible
 
-It discourages links to relative paths and allows the editor to provide auto-completion of full explicit paths. This has the advantages of:
+It discourages links to relative paths and allows the editor to provide auto-completion of absolute paths. This has the advantages of:
 - You directly see where a link will be navigating to
 - You get auto-completions on all route patterns
 - Modifying the (parent) routes will result in compile errors
 - Correct route parameters are enforced by the type system
 
-> During route declaration, you may use absolute & relative route paths. When it talks about discouraging relative paths, it is about **pointing** to the route that should not be relative, not the declaration of it.
+> During route declaration, you may use both absolute & relative route paths. When **pointing** towards a route, absolute paths need to be used.
 
 ## Install
 
