@@ -15,6 +15,7 @@ The main aim of `typed-react-router` is to be:
 - Type-safe
 - Explicit
 - Refactorable
+- React Router V6 compatible
 
 It discourages links to relative paths and allows the editor to provide auto-completion of full explicit paths. This has the adventages of:
 - You directly see where a link will be navigating to
