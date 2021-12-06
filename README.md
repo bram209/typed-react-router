@@ -208,4 +208,4 @@ export function CoursesIndex() {
   );
 }
 ```
-You can always still use `react-router` as you might seem fit.
+You can always still use `react-router` directly as you might seem fit.
