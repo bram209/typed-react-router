@@ -108,10 +108,7 @@ export function Layout() {
     </div>
   )
 }
-
-...
-// omitted for brevity
-...
+```
 
 ## FAQ
 
@@ -139,6 +136,9 @@ This means that the following code (taken from the `Route objects` react-router 
     }
   ];
 
+
+...
+// omitted for brevity
 ...
 
 function CoursesIndex() {
