@@ -48,7 +48,7 @@ export const constructTypedRouter = <T,>(routes: T) => {
       props: CheckParamReq<TypedLinkProps<Pattern>>,
     ) {
       const path = typeof props.to === 'string' ? props.to : props.to.pathname
-      return <Link {...props} to={path ? generatePath(path, props.params) : {}} />
+      return <Link {...props} replace to={path ? generatePath(path, props.params) : {}} />
     },
 
     useMatch: (pattern: Pattern<TypedRoutePattern>) =>
