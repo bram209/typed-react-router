@@ -1,5 +1,13 @@
 import React from 'react'
-import { generatePath, Link, LinkProps, matchPath, useMatch } from 'react-router-dom'
+import {
+  generatePath,
+  Link,
+  LinkProps,
+  matchPath,
+  Navigate,
+  NavigateProps,
+  useMatch,
+} from 'react-router-dom'
 
 import {
   CheckParamReq,
@@ -13,7 +21,13 @@ import {
 import { TypedNavigateFunction, useTypedNavigate } from './useTypedNavigate'
 
 export interface TypedLinkProps<RoutePattern extends string>
-  extends Omit<LinkProps, 'to'> {
+  extends Omit<LinkProps, 'to' | 'replace'> {
+  to: To<RoutePattern>
+  params: ExtractParams<RoutePattern>
+}
+
+export interface TypedNavigateProps<RoutePattern extends string>
+  extends Omit<NavigateProps, 'to' | 'replace'> {
   to: To<RoutePattern>
   params: ExtractParams<RoutePattern>
 }
@@ -21,6 +35,10 @@ export interface TypedLinkProps<RoutePattern extends string>
 interface TypedRouter<RoutesType extends string> {
   Link<Pattern extends RoutesType>(
     props: CheckParamReq<TypedLinkProps<Pattern>>,
+  ): React.ReactElement
+
+  Navigate<Pattern extends RoutesType>(
+    props: CheckParamReq<TypedNavigateProps<Pattern>>,
   ): React.ReactElement
 
   useMatch: (
@@ -49,6 +67,15 @@ export const constructTypedRouter = <T,>(routes: T) => {
     ) {
       const path = typeof props.to === 'string' ? props.to : props.to.pathname
       return <Link {...props} replace to={path ? generatePath(path, props.params) : {}} />
+    },
+
+    Navigate<Pattern extends TypedRoutePattern>(
+      props: CheckParamReq<TypedNavigateProps<Pattern>>,
+    ) {
+      const path = typeof props.to === 'string' ? props.to : props.to.pathname
+      return (
+        <Navigate {...props} replace to={path ? generatePath(path, props.params) : {}} />
+      )
     },
 
     useMatch: (pattern: Pattern<TypedRoutePattern>) =>
