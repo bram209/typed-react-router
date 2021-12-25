@@ -4,7 +4,7 @@
   "author": "Bram Hoendervangers <bram.Hoendervangers@gmail.com>",
   "repository": "https://github.com/bram209/typed-react-router",
   "license": "MIT",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "keywords": [
     "typescript",
     "react-router",

@@ -11,11 +11,15 @@ type RoutePaths<T> = T extends Record<string, unknown>
   : never
 
 type FixAbsolutePaths<T extends string> = T extends `${infer _}//${infer Rest}`
-  ? `/${FixAbsolutePaths<Rest>}`
+  ? `${FixAbsolutePaths<Rest>}`
+  : T extends '/'
+  ? ''
   : T
 
+type PrefixWith<T extends string, Prefix extends string> = `${Prefix}${T}`
+
 type AsPaths<T> = T extends ReadonlyArray<infer V>
-  ? FixAbsolutePaths<RoutePaths<V> & string> & string
+  ? PrefixWith<FixAbsolutePaths<RoutePaths<V> & string>, '/'> & string
   : never
 
 type ExtractParams<Pattern extends string> =
